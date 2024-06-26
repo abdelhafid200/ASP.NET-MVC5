@@ -1,0 +1,40 @@
+﻿ 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1>Demo Page : @ViewData["Message"]</h1>
+    <p>The are @ViewData["CustomerCounts"] customers into the list</p>
+    <table>
+
+        <thead>
+
+        <th>
+        <td>Customer Id</td>
+        <td>Customer Name</td>
+        <td>Customer Amount</td>
+        </th>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["CustomerList"] as List<Customer>)
+            {
+                <tr>
+                    <td>@item.Id ddjd</td>
+                    <td>@item.Name</td>
+                    <td>@item.Amount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</body>
+</html>

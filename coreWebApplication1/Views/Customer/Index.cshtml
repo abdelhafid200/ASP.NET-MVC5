@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Message</h1>
+<h3> view : @ViewBag.Message  </h3>
+
+<p>The are @ViewBag.CustomersCounts customers added into the List : </p>
+
+<ul>
+    @foreach( var item in ViewBag.CustomerList)
+    {
+        <li>
+            @item.Id --- @item.Name --- @item.Amount
+        </li>
+    }
+
+</ul>
+
+@Html.ActionLink("Details Page", "Details", "Customer")
+
+<br />
+
+<a asp-controller="Customer" asp-action="Message">Message</a>

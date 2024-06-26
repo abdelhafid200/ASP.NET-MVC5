@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Demo Page : @ViewBag.Message</h1>
+    <p>The are @ViewBag.CustomerCounts customers into the list</p>
+    <table>
+
+    <thead>
+
+        <th>
+            <td>Customer Id</td>
+            <td>Customer Name</td>
+                <td>Customer Amount</td>
+        </th>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.CustomerList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Amount</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+       
+
+</body>
+</html>
